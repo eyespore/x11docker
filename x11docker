@@ -7136,9 +7136,11 @@ exec /bin/sh $(convertpath share "$Containerrc")
 "
     ;;
   esac
-  while read Line; do
-    echo "echo 'export $Line' >> /etc/profile.d/10-x11docker-env.sh"
-  done <<< $(store_runoption dump env)
+  
+  # while read Line; do
+  #   echo "echo 'export $Line' >> /etc/profile.d/10-x11docker-env.sh"
+  # done <<< $(store_runoption dump env)
+
   echo "
 # Container system
 Containersystem=\"\$(grep '^ID=' /etc/os-release 2>/dev/null | cut -d= -f2 || echo 'unknown')\"
